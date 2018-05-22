@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=1:xe
+#PBS -l walltime=24:00:00
+
+#PBS -N data_2000
+
+#PBS -o /u/sciteam/smzyz/test/download.out
+#PBS -e /u/sciteam/smzyz/test/download.err
+
+
+cd /u/sciteam/smzyz/git_projects/MODIS_download/documents
+wget -q -nc -i mod35_hdf_2000_left.txt --header "Authorization: Bearer 59451810-53C9-11E8-9F28-C61EAE849760" -P /u/sciteam/smzyz/scratch/data/MODIS/MOD35/2000/
